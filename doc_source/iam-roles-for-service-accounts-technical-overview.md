@@ -175,11 +175,11 @@ Account A attaches a policy to that role with the following permissions to assum
 The application code for pods to assume Account B's role uses two profiles: `account_b_role` and `account_a_role`\. The `account_b_role` profile uses the `account_a_role` profile as its source\. For the AWS CLI, the `~/.aws/config` file would look like the following example\.  
 
 ```
-[profile account_b_role]
+[account_b_role]
 source_profile = account_a_role
 role_arn=arn:aws:iam::222222222222:role/account-b-role
 
-[profile account_a_role]
+[account_a_role]
 web_identity_token_file = /var/run/secrets/eks.amazonaws.com/serviceaccount/token 
 role_arn=arn:aws:iam::111111111111:role/account-a-role
 ```
